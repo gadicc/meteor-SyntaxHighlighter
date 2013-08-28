@@ -6,7 +6,21 @@ For the server side, just use the node-syntaxhighlighter npm package.
 
 ## Usage
 
-### Method 1: Use as "normal" (I don't recommend this)
+### Method 1: Our way (recommended)
+
+Use in a template like this:
+
+```html
+{{#sh_highlight lang="js"}}function etc() { ... }{{/sh_highlight}}
+```
+
+Or directly in Javascript thus:
+
+```js
+var highlighted = sh_highlight(text, lang);
+```
+
+### Method 2: Use as "normal" (I don't recommend this)
 
 If you format your &lt;pre&gt; blocks as recommend in the apps documentation, just run SyntaxHighlighter.all() in your template's rendered function.  e.g.
 
@@ -16,7 +30,7 @@ Template.example.rendered = function() {
 }
 ```
 
-### Method 2: Return a highlighted version of the given code
+### Method 3: For reference, the code used in our helpers
 
 
 ```js
@@ -48,7 +62,5 @@ marked.setOptions({
 
 ## Smart package info
 
-1. I preferred not to touch the original source code of the package.  Since the package relies on a global SyntaxHighlighter variable, I had to include it using the {raw: true} undocumented package.js directive, and this only seems to work on the client side.
-
-2. On deploy, this sends a minified version of all brushes.  It would be preferable to load brushes on demand, but this would require support for static assets in smart packages, which I don't believe exists (yet).
+1. On deploy, this sends a minified version of all brushes.  It would be preferable to load brushes on demand, but this would require support for static assets in smart packages, which I don't believe exists (yet).
 

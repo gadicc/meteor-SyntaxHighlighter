@@ -2,14 +2,28 @@ Package.describe({
     summary: "Alex Gorbatchev SyntaxHighlighter, *client-side*"
 });
 
-// even though we're serving minified, dynamic loading would be nice
 Package.on_use(function (api) {
+	api.use('handlebars', 'client', { weak: true });
+
+	// Weak dependencies broken in 0.6.5
+	try {
+	    api.use('sp-marked', 'client');
+	}
+	catch (error) {
+	    if (error.code != 'ENOENT')
+	        throw(error);
+	}
+
+	/*
 	api.add_files(
 		'lib/syntaxhighlighter_3.0.83/scripts/shCore.js',
-		'client', { raw: true }
+		'client', { bare: true }
 	);
+	*/
+	api.add_files('shCore-meteor.js', 'client');
 
     api.add_files([
+		// TODO, even though we're serving minified, dynamic loading would be nice
 		//'lib/syntaxhighlighter_3.0.83/scripts/shCore.js',
 		//'lib/syntaxhighlighter_3.0.83/scripts/shLegacy.js',
 		//'lib/syntaxhighlighter_3.0.83/scripts/shAutoloader.js',
@@ -44,4 +58,9 @@ Package.on_use(function (api) {
 		'lib/syntaxhighlighter_3.0.83/styles/shCore.css',
 		'lib/syntaxhighlighter_3.0.83/styles/shThemeDefault.css'
 	], 'client');
+
+	api.add_files('helpers.js', 'client');
+
+	if (api.export)
+		api.export(['SyntaxHighlighter', 'sh_highlight'], 'client');
 });
