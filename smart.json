@@ -5,5 +5,7 @@
     "author": "Gadi Cohen <dragon@wastelands.net>",
     "version": "0.0.2",
     "git": "https://github.com/gadicohen/meteor-SyntaxHighlighter.git",
-	"packages": {}
+	"packages": {
+		"sp-marked": "0.0.2"
+	}
 }
