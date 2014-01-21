@@ -3,7 +3,7 @@
     "description": "Alex Gorbatchev's code SyntaxHighlighter *client-side*",
     "homepage": "https://github.com/gadicohen/meteor-SyntaxHighlighter",
     "author": "Gadi Cohen <dragon@wastelands.net>",
-    "version": "3.0.83.4",
+    "version": "3.0.83.5",
     "git": "https://github.com/gadicohen/meteor-SyntaxHighlighter.git",
 	"packages": {
 		"sp-marked": "0.0.2"
