@@ -1,10 +1,10 @@
 {
-    "name": "SyntaxHighlighter",
-    "description": "Alex Gorbatchev's code SyntaxHighlighter *client-side*",
-    "homepage": "https://github.com/gadicohen/meteor-SyntaxHighlighter",
-    "author": "Gadi Cohen <dragon@wastelands.net>",
-    "version": "3.0.83-8",
-    "git": "https://github.com/gadicohen/meteor-SyntaxHighlighter.git",
+  "name": "SyntaxHighlighter",
+  "description": "Alex Gorbatchev's code SyntaxHighlighter *client-side*",
+  "homepage": "https://github.com/gadicohen/meteor-SyntaxHighlighter",
+  "author": "Gadi Cohen <dragon@wastelands.net>",
+  "version": "3.0.83-9",
+  "git": "https://github.com/gadicohen/meteor-SyntaxHighlighter.git",
 	"packages": {
 		"sp-marked": "0.0.2"
 	}

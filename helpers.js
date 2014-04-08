@@ -19,16 +19,16 @@ sh_highlight = function(code, lang) {
     }
 }
 
-// if Handlebars is installed, add a sh_highlight block helper
-if (Package && Package.handlebars)
-	var Handlebars = Package.handlebars.Handlebars;
-if (typeof Handlebars != 'undefined') {
-	Handlebars.registerHelper('sh_highlight', function(options) {
-		var code = options.fn(this);
-		var lang = options.hash.lang;
-		return new Handlebars.SafeString(sh_highlight(code, lang));
-	});
+Template.sh_highlight.helper = function(component, options) {
+    var code = UI.toRawText(component).trimRight();
+    return Spacebars.SafeString(sh_highlight(code, this.lang));
 }
+
+UI.registerHelper('sh_highlight', function(options) {
+	var code = options.fn(this);
+	var lang = options.hash.lang;
+	return new Handlebars.SafeString(sh_highlight(code, lang));
+});
 
 // if marked is installed, use us as the default highlighter
 if (Package && Package['sp-marked']) {

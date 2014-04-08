@@ -3,16 +3,8 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-	api.use('handlebars', 'client', { weak: true });
-
-	// Weak dependencies broken in 0.6.5
-	try {
-	    api.use('sp-marked', 'client');
-	}
-	catch (error) {
-	    if (error.code != 'ENOENT')
-	        throw(error);
-	}
+	api.use(['ui', 'templating'], 'client');
+  api.use('sp-marked', 'client', { weak: true });
 
 	/*
 	api.add_files(
@@ -59,8 +51,6 @@ Package.on_use(function (api) {
 		'lib/syntaxhighlighter_3.0.83/styles/shThemeDefault.css'
 	], 'client');
 
-	api.add_files('helpers.js', 'client');
-
-	if (api.export)
-		api.export(['SyntaxHighlighter', 'sh_highlight'], 'client');
+	api.add_files(['helpers.html', 'helpers.js'], 'client');
+	api.export(['SyntaxHighlighter', 'sh_highlight'], 'client');
 });

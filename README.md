@@ -4,6 +4,10 @@ A smart package providing Alex Gorbatchev's [SyntaxHighlighter](http://alexgorba
 
 For the server side, just use the node-syntaxhighlighter npm package.
 
+If you have `sp-marked` installed too, SyntaxHighlighter sets itself as the
+default highlighter, and will be used automatically with no additional work
+on your part in <code>```js</code> type markdown escapes.
+
 ## Usage
 
 ### Method 1: Our way (recommended)
