@@ -20,7 +20,11 @@
  *
  * - Unminified at http://jsbeautifier.org/
  * - Make SyntaxHighlighter,XRegExp a global variable (remove 'var')
+ * - Explicitly set require to undefined (as a hint to famono)
  */
+
+// Explicitly set require to undefined, as a hint to famono
+require = undefined;
 
 XRegExp = null;
 (function () {

@@ -1,5 +1,9 @@
 ## vNEXT
 
+# 3.0.83-10
+
+* Explicitly define `require` as undefined, as a hint to famono
+
 ## 3.0.83-9
 
 * Added support for Blaze Engine
