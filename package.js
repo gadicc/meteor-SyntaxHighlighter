@@ -51,6 +51,6 @@ Package.on_use(function (api) {
 		'lib/syntaxhighlighter_3.0.83/styles/shThemeDefault.css'
 	], 'client');
 
-	api.add_files(['helpers.html', 'helpers.js'], 'client');
+	api.add_files(['helpers.js'], 'client');
 	api.export(['SyntaxHighlighter', 'sh_highlight'], 'client');
 });

@@ -1,5 +1,9 @@
 ## vNEXT
 
+# 30.0.83-11
+
+* Meteor 0.8.3 Blaze fixes
+
 # 3.0.83-10
 
 * Explicitly define `require` as undefined, as a hint to famono

@@ -19,16 +19,18 @@ sh_highlight = function(code, lang) {
     }
 }
 
-Template.sh_highlight.helper = function(component, options) {
-    var code = UI.toRawText(component).trimRight();
-    return Spacebars.SafeString(sh_highlight(code, this.lang));
-}
+UI.registerHelper("sh_highlight", Template.__create__('sh_highlight', function () {
+    var view = this;
+    var data = Blaze.getViewData(view);
 
-UI.registerHelper('sh_highlight', function(options) {
-	var code = options.fn(this);
-	var lang = options.hash.lang;
-	return new Handlebars.SafeString(sh_highlight(code, lang));
-});
+    var content = '';
+    if (view.templateContentBlock) {
+      content = Blaze.toText(view.templateContentBlock, HTML.TEXTMODE.STRING)
+        .trimRight();
+    }
+    console.log(data);
+    return HTML.Raw(sh_highlight(content, data.lang));
+}));
 
 // if marked is installed, use us as the default highlighter
 if (Package && Package['sp-marked']) {
