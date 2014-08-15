@@ -28,7 +28,6 @@ UI.registerHelper("sh_highlight", Template.__create__('sh_highlight', function (
       content = Blaze.toText(view.templateContentBlock, HTML.TEXTMODE.STRING)
         .trimRight();
     }
-    console.log(data);
     return HTML.Raw(sh_highlight(content, data.lang));
 }));
 

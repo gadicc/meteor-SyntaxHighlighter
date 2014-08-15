@@ -1,5 +1,9 @@
 ## vNEXT
 
+# 30.8.83-12
+
+* Remove console.log :(
+
 # 30.0.83-11
 
 * Meteor 0.8.3 Blaze fixes
