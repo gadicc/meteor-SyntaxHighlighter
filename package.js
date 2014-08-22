@@ -1,14 +1,18 @@
 Package.describe({
 	name: 'gadicohen:syntaxhighlighter',
     summary: "Alex Gorbatchev SyntaxHighlighter, *client-side*",
-	version: "3.0.83-12",
+	version: "3.0.83-13",
 	githubUrl: "https://github.com/gadicc/meteor-SyntaxHighlighter"
 });
 
 Package.on_use(function (api) {
-	api.versionsFrom('METEOR-CORE@0.9.0-atm');
+	if (api.versionsFrom) {
+		api.versionsFrom('METEOR-CORE@0.9.0-atm');
+		api.use('mrt:sp-marked@0.0.2', 'client', { weak: true });
+	} else {
+		api.use('sp-marked', 'client', { weak: true });
+	}
 	api.use(['ui', 'templating'], 'client');
-	api.use('mrt:sp-marked@0.0.2', 'client', { weak: true });
 
 	/*
 	api.add_files(
