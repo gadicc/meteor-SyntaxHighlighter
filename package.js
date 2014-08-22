@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'gadicohen:syntaxhighlighter',
     summary: "Alex Gorbatchev SyntaxHighlighter, *client-side*",
-	version: "3.0.83-13",
+	version: "3.0.83-15",
 	githubUrl: "https://github.com/gadicc/meteor-SyntaxHighlighter"
 });
 
