@@ -19,14 +19,13 @@ sh_highlight = function(code, lang) {
     }
 }
 
-UI.registerHelper("sh_highlight", Template.__create__('sh_highlight', function () {
+Blaze.Template.registerHelper("sh_highlight", new Template('sh_highlight', function () {
     var view = this;
-    var data = Blaze.getViewData(view);
-
     var content = '';
+	var data = Blaze.getData(view);
+
     if (view.templateContentBlock) {
-      content = Blaze.toText(view.templateContentBlock, HTML.TEXTMODE.STRING)
-        .trimRight();
+      content = Blaze._toText(view.templateContentBlock, HTML.TEXTMODE.STRING);
     }
     return HTML.Raw(sh_highlight(content, data.lang));
 }));
