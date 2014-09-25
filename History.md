@@ -1,5 +1,9 @@
 ## vNEXT
 
+# 30.8.83-19 and _19
+
+* Fix for mrt:sp-marked
+
 # 30.8.83-12
 
 * Remove console.log :(

@@ -31,8 +31,11 @@ Blaze.Template.registerHelper("sh_highlight", new Template('sh_highlight', funct
 }));
 
 // if marked is installed, use us as the default highlighter
-if (Package && Package['sp-marked']) {
-	Package['sp-marked'].marked.setOptions({
-	    highlight: sh_highlight
-	});
+if (Package) {
+	var markedPkg = Package['sp-marked'] || Package['mrt:sp-marked'];
+	if (markedPkg)
+		markedPkg.marked.setOptions({
+		    highlight: sh_highlight
+		});
 }
+
